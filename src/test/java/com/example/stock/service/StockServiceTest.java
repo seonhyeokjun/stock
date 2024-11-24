@@ -50,7 +50,7 @@ class StockServiceTest {
         CountDownLatch latch = new CountDownLatch(threadCount);
 
         for (int i = 0; i < threadCount; i++) {
-            executorService.execute(() -> {
+            executorService.submit(() -> {
                 try {
                     stockService.decrease(1L, 1L);
                 } finally {
